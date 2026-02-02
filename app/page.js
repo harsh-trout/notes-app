@@ -59,6 +59,10 @@ export default function NotesPage() {
     setEditingId(null);
   }
 
+  function getCharacterCount() {
+    return (title?.length || 0) + (content?.length || 0);
+  }
+
   return (
     <main style={styles.main}>
       <h1 style={styles.h1}>Notes</h1>
@@ -78,15 +82,18 @@ export default function NotesPage() {
           style={{ ...styles.input, ...styles.textarea }}
           rows={3}
         />
-        <div style={styles.buttons}>
-          <button type="submit" style={styles.btn}>
-            {editingId ? 'Update' : 'Add'}
-          </button>
-          {editingId && (
+        <div style={styles.formFooter}>
+          <span style={styles.charCount}>{getCharacterCount()} characters</span>
+          <div style={styles.buttons}>
+            <button type="submit" style={styles.btn}>
+              {editingId ? 'Update' : 'Add'}
+            </button>
+            {editingId && (
             <button type="button" onClick={cancelEdit} style={styles.btnSecondary}>
               Cancel
             </button>
           )}
+          </div>
         </div>
       </form>
 
@@ -110,17 +117,19 @@ export default function NotesPage() {
 
 const styles = {
   main: { maxWidth: 480, margin: '0 auto', padding: 24, fontFamily: 'system-ui' },
-  h1: { marginBottom: 24 },
+  h1: { marginBottom: 24, color: '#e4e4e4' },
   form: { marginBottom: 32 },
-  input: { width: '100%', padding: 12, marginBottom: 12, border: '1px solid #ddd', borderRadius: 6, boxSizing: 'border-box' },
+  input: { width: '100%', padding: 12, marginBottom: 12, border: '1px solid #333', borderRadius: 6, boxSizing: 'border-box', background: '#1a1a1a', color: '#e4e4e4' },
   textarea: { resize: 'vertical', minHeight: 60 },
+  formFooter: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 },
+  charCount: { fontSize: 12, color: '#888' },
   buttons: { display: 'flex', gap: 8 },
-  btn: { padding: '10px 20px', background: '#000', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
-  btnSecondary: { padding: '10px 20px', background: '#666', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
+  btn: { padding: '10px 20px', background: '#3b82f6', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
+  btnSecondary: { padding: '10px 20px', background: '#444', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
   list: { listStyle: 'none', padding: 0, margin: 0 },
-  note: { padding: 16, border: '1px solid #eee', borderRadius: 8, marginBottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' },
-  content: { margin: '8px 0 0', color: '#555', fontSize: 14 },
+  note: { padding: 16, border: '1px solid #333', borderRadius: 8, marginBottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', background: '#1a1a1a' },
+  content: { margin: '8px 0 0', color: '#a3a3a3', fontSize: 14 },
   noteActions: { display: 'flex', gap: 8 },
-  smallBtn: { padding: '6px 12px', fontSize: 12, background: '#eee', border: 'none', borderRadius: 4, cursor: 'pointer' },
-  deleteBtn: { background: '#fee', color: '#c00' },
+  smallBtn: { padding: '6px 12px', fontSize: 12, background: '#333', color: '#e4e4e4', border: 'none', borderRadius: 4, cursor: 'pointer' },
+  deleteBtn: { background: '#4a1a1a', color: '#f87171' },
 };
