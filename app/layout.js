@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Notes',
+  title: 'branch teast',
   description: 'Simple notes app',
 };
 
