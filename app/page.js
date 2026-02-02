@@ -66,7 +66,7 @@ export default function NotesPage() {
   return (
     <main style={styles.main}>
       <h1 style={styles.h1}>
-        Notes <span style={styles.badge}>{notes.length}</span>
+        Test Notes <span style={styles.badge}>{notes.length}</span>
       </h1>
 
       <form onSubmit={handleSubmit} style={styles.form}>
@@ -118,21 +118,21 @@ export default function NotesPage() {
 }
 
 const styles = {
-  main: { maxWidth: 480, margin: '0 auto', padding: 24, fontFamily: 'system-ui' },
-  h1: { marginBottom: 24, color: '#e4e4e4', display: 'flex', alignItems: 'center', gap: 10 },
-  badge: { fontSize: 14, background: '#1a4d3d', color: '#98f5e1', padding: '4px 10px', borderRadius: 20, fontWeight: 500 },
+  main: { maxWidth: 480, margin: '0 auto', padding: 24, fontFamily: 'system-ui', color: '#1e3a8a' },
+  h1: { marginBottom: 24, color: '#1e3a8a', display: 'flex', alignItems: 'center', gap: 10 },
+  badge: { fontSize: 14, background: '#dbeafe', color: '#1e40af', padding: '4px 10px', borderRadius: 20, fontWeight: 500 },
   form: { marginBottom: 32 },
-  input: { width: '100%', padding: 12, marginBottom: 12, border: '1px solid #333', borderRadius: 6, boxSizing: 'border-box', background: '#1a1a1a', color: '#e4e4e4' },
+  input: { width: '100%', padding: 12, marginBottom: 12, border: '1px solid #93c5fd', borderRadius: 6, boxSizing: 'border-box', background: '#fff', color: '#1e3a8a' },
   textarea: { resize: 'vertical', minHeight: 60 },
   formFooter: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 8 },
-  charCount: { fontSize: 12, color: '#888' },
+  charCount: { fontSize: 12, color: '#3b82f6' },
   buttons: { display: 'flex', gap: 8 },
-  btn: { padding: '10px 20px', background: '#3b82f6', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
-  btnSecondary: { padding: '10px 20px', background: '#444', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
+  btn: { padding: '10px 20px', background: '#2563eb', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' },
+  btnSecondary: { padding: '10px 20px', background: '#93c5fd', color: '#1e3a8a', border: 'none', borderRadius: 6, cursor: 'pointer' },
   list: { listStyle: 'none', padding: 0, margin: 0 },
-  note: { padding: 16, border: '1px solid #333', borderRadius: 8, marginBottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', background: '#1a1a1a' },
-  content: { margin: '8px 0 0', color: '#a3a3a3', fontSize: 14 },
+  note: { padding: 16, border: '1px solid #93c5fd', borderRadius: 8, marginBottom: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', background: '#f8fafc' },
+  content: { margin: '8px 0 0', color: '#3b82f6', fontSize: 14 },
   noteActions: { display: 'flex', gap: 8 },
-  smallBtn: { padding: '6px 12px', fontSize: 12, background: '#333', color: '#e4e4e4', border: 'none', borderRadius: 4, cursor: 'pointer' },
-  deleteBtn: { background: '#4a1a1a', color: '#f87171' },
+  smallBtn: { padding: '6px 12px', fontSize: 12, background: '#dbeafe', color: '#1e40af', border: 'none', borderRadius: 4, cursor: 'pointer' },
+  deleteBtn: { background: '#fee2e2', color: '#dc2626' },
 };
