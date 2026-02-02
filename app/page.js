@@ -65,7 +65,9 @@ export default function NotesPage() {
 
   return (
     <main style={styles.main}>
-      <h1 style={styles.h1}>Notes</h1>
+      <h1 style={styles.h1}>
+        Notes <span style={styles.badge}>{notes.length}</span>
+      </h1>
 
       <form onSubmit={handleSubmit} style={styles.form}>
         <input
@@ -117,7 +119,8 @@ export default function NotesPage() {
 
 const styles = {
   main: { maxWidth: 480, margin: '0 auto', padding: 24, fontFamily: 'system-ui' },
-  h1: { marginBottom: 24, color: '#e4e4e4' },
+  h1: { marginBottom: 24, color: '#e4e4e4', display: 'flex', alignItems: 'center', gap: 10 },
+  badge: { fontSize: 14, background: '#1a4d3d', color: '#98f5e1', padding: '4px 10px', borderRadius: 20, fontWeight: 500 },
   form: { marginBottom: 32 },
   input: { width: '100%', padding: 12, marginBottom: 12, border: '1px solid #333', borderRadius: 6, boxSizing: 'border-box', background: '#1a1a1a', color: '#e4e4e4' },
   textarea: { resize: 'vertical', minHeight: 60 },
