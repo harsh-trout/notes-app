@@ -66,7 +66,7 @@ export default function NotesPage() {
   return (
     <main style={styles.main}>
       <h1 style={styles.h1}>
-        Test Notes <span style={styles.badge}>{notes.length}</span>
+        12345678<span style={styles.badge}>{notes.length}</span>
       </h1>
 
       <form onSubmit={handleSubmit} style={styles.form}>
